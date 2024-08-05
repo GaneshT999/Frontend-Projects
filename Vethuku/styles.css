@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e9f5ec; /* Subtle light gray background color */
+
+}
+
+.navbar, .navbar-expand-lg {
+  background-color: #f8f9fa; /* This is a very light grey, almost white color */
+}
+
+header {
+  background: repeating-linear-gradient(to bottom, #e9f5ec, #1ae7cf);
+      color: #00695c; /* A color that matches the green theme for contrast */
+}
+
+/* Additional style for improved readability */
+.navbar-brand, .navbar-nav .nav-link {
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Change as needed */
+  text-shadow: 2px 2px #87e548; /* Red text shadow *
+  color: #00695c;
+   /* A green color that matches the header text for a cohesive look */
+}
+
+.navbar-brand:hover, .navbar-nav .nav-link:hover {
+  color: #004d40; /* Darker green for hover state for better contrast and visibility */
+}
+
+/* Ensure the footer complements the overall design */
+footer {
+  background-color: #f8f9fa; /* Match the navbar for consistency */
+  color: #00695c; /* Echo the green theme in text as well */
+}
+
+

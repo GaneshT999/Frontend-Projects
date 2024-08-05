@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    body {
+    background-color: #1cbb9b;
+    background-image: url('images/background_image_dalle.jpg');
+    animation: color-fade 5s linear infinite, cloud-spiral 10s linear infinite;
+}
+
+@keyframes color-fade {
+    0%, 100% { background-color: #1cbb9b; }
+    50% { background-color: #ffffff; }
+}
+
+@keyframes cloud-spiral {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 500px; }
+}
+.login-box {
+      position:relative;
+      margin: 10px auto;
+      width: 500px;
+      height: 380px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 3px;
+      box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+    }
+    .lb-header {
+      position:relative;
+      color: #00415d;
+      margin: 5px 5px 10px 5px;
+      padding-bottom:10px;
+      border-bottom: 1px solid #eee;
+      text-align:center;
+      height:28px;
+    }
+    .lb-header a {
+      margin: 0 25px;
+      padding: 0 20px;
+      text-decoration: none;
+      color: #666;
+      font-weight: bold;
+      font-size: 15px;
+      transition: all 0.1s linear;
+    }
+    .lb-header .active {
+      color: #029f5b;
+      font-size: 18px;
+    }
+    .social-login {
+      position:relative;
+      float: left;
+      width: 100%;
+      height:auto;
+      padding: 10px 0 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .social-login a {
+      position:relative;
+      float: left;
+      width:calc(40% - 8px);
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(0,0,0,0.05);
+      padding: 12px;
+      border-radius: 2px;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin: 0 3%;
+      text-align:center;
+    }
+    .social-login a i {
+      position: relative;
+      float: left;
+      width: 20px;
+      top: 2px;
+    }
+    .social-login a:first-child {
+      background-color: #49639F;
+    }
+    .social-login a:last-child {
+      background-color: #DF4A32;
+    }
+    .email-login, .email-signup {
+      position:relative;
+      float: left;
+      width: 100%;
+      height:auto;
+      margin-top: 20px;
+      text-align:center;
+    }
+    .u-form-group {
+      width:100%;
+      margin-bottom: 10px;
+    }
+    .u-form-group input[type="email"],
+    .u-form-group input[type="password"],
+    .u-form-group input[type="text"],
+    .u-form-group input[type="tel"] {
+        width: calc(50% - 22px);
+        height: 45px;
+        outline: none;
+        border: 1px solid #ddd;
+        padding: 0 10px;
+        border-radius: 2px;
+        color: #333;
+        font-size: 0.8rem;
+        transition: all 0.1s linear;
+    }
+
+    .u-form-group input:focus {
+        border-color: #358efb;
+    }
+
+    .u-form-group button {
+        width: 50%;
+        background-color: #1CB94E;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 14px 0;
+        border-radius: 2px;
+        text-transform: uppercase;
+    }
+      width: calc(50% - 22px);
+      height:45px;
+      outline: none;
+      border: 1px solid #ddd;
+      padding: 0 10px;
+      border-radius: 2px;
+      color: #333;
+      font-size:0.8rem;
+      transition: all 0.1s linear;
+    }
+    .u-form-group input:focus {
+      border-color: #358efb;
+    }
+    .u-form-group button {
+      width:50%;
+      background-color: #1CB94E;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 14px;
+      font-weight: normal;
+      padding: 14px 0;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+    .forgot-password {
+      width:50%;
+      text-align: left;
+      text-decoration: underline;
+      color: #888;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <div class="lb-header">
+      <a href="#" class="active" id="login-box-link" onclick="showLogInContent()">Login</a>
+      <a href="#" id="signup-box-link" onclick="showSignUpContent()">Sign Up</a>
+    </div>
+    <div class="social-login">
+      <a href="#">
+        <i class="fa fa-facebook fa-lg"></i>
+        Login in with USF Account
+      </a>
+      <a href="#">
+        <i class="fa fa-google-plus fa-lg"></i>
+        Log in with Google
+      </a>
+    </div>
+    <form class="email-login" id="login-form">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email" id="username">
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password" id="password">
+      </div>
+      <div class="u-form-group">
+        <button type="submit">Log in</button>
+      </div>
+      <div class="u-form-group">
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+    </form>
+    <form class="email-signup" id="signup-form" style="display: none;">
+      <div class="u-form-group">
+        <input type="email" placeholder="Email">
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Password">
+      </div>
+      <div class="u-form-group">
+        <input type="password" placeholder="Confirm Password">
+      </div>
+      <div class="u-form-group"  id="additional-fields" style="display: none;">
+        <input type="text" placeholder="Name">
+      </div>
+      <div class="u-form-group" id="additional-fields" style="display: none; ">
+        <input type="tel" placeholder="Phone Number">
+      </div>
+      <div class="u-form-group">
+        <button>Sign Up</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "admin@gmail.com" && password === "password") {
+        localStorage.setItem('username', username);
+        alert("Login successful");
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid credentials");
+      }
+    });
+
+    function showLogInContent() {
+      document.getElementById("login-form").style.display = "block";
+      document.getElementById("signup-form").style.display = "none";
+    }
+
+    function showSignUpContent() {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("signup-form").style.display = "block";
+    }
+  </script>
+</body>
+</html>

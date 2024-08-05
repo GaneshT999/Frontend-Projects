@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation Finder for Students</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        .form-field {
+            width: 100%;
+        }
+    </style>
+
+<style>
+    .accordion-button::after {
+        content: '\002B'; /* Unicode character for "+" */
+        float: right;
+    }
+    .accordion-button.collapsed::after {
+        content: '\2212'; /* Unicode character for "-" */
+    }
+    .accordion-header {
+        background-color: #f8f9fa; /* Light gray */
+        border: 1px solid #dee2e6; /* Gray border */
+    }
+    .accordion-body {
+        background-color: #ffffff; /* White */
+        border: 1px solid #dee2e6; /* Gray border */
+        border-top: none; /* Remove top border */
+    }
+</style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: green; font-size: 36px; font-weight: bold; text-decoration: none;">VETHUKKO</a>
+            <img src="images/usf_logo.png" alt="Logo" style="width: 150px; height: auto;">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="active nav-link" href="index.html"> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Compare.html">Compare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Map.html">Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" id="loginLink">Login</a>
+
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#" onclick="logout()" id="logoutButton">Logout</a>
+
+                    </li>
+
+                    </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white py-5">
+        <div class="container">
+            <h1 class="display-4" style="color: green; font-size: 48px; font-weight: bold; text-align: center;">Bulls!! off campus housing.</h1>
+            <p class="lead" style="color: green; font-size: 24px; font-weight: bold; text-align: center;">Find the right apartment for you.</p>
+
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <select class="form-select form-field">
+                        <option selected>Select Place</option>
+                        <!-- Replace 'Place1', 'Place2', etc. with your actual places -->
+                        <option value="Place1">Place1</option>
+                        <option value="Place2">Place2</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select form-field">
+                        <option selected>Select Bull Runner Distance</option>
+                        <option value="1">1 min walk</option>
+                        <option value="3">3 min walk</option>
+                        <option value="5">5 min walk</option>
+                        <option value="10">10 min walk</option>
+                        <option value="15">15 min walk</option>
+                        <option value="20">20 min walk</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <input type="number" class="form-control form-field" placeholder="Beds">
+                </div>
+                <div class="col-md-2">
+                    <input type="number" class="form-control form-field" placeholder="Bath">
+                </div>
+                <div class="col-md-2">
+                    <select class="form-select form-field">
+                        <option selected>Select Price Range</option>
+                        <option value="200-300">$200 - $300</option>
+                        <option value="300-350">$300 - $350</option>
+                        <option value="350-400">$350 - $400</option>
+                        <option value="400-500">$400 - $500</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-auto">
+                    <button type="submit" href="apartments.html"  class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Top Apartment Deals around USF campus</h2>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card">
+                                <img src="images/lakeview.jpg" class="card-img-top" alt="Apartment Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cambridge Woods</h5>
+                                    <p class="card-text">Tharuvtha pedadhham</p>
+                                    <a href="#" class="btn btn-warning">$50</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="images/viridian.jpg" class="card-img-top" alt="Apartment Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Viridian</h5>
+                                    <p class="card-text">Apartments -1 bed</p>
+                                    <a href="#" class="btn btn-warning">$100</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="images/Cambridge Woods/cambridge-woods-room.jpg" class="card-img-top" alt="Apartment Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lakeview</h5>
+                                    <p class="card-text">Single Sharing</p>
+                                    <a href="#" class="btn btn-warning">$50</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Second set of cards -->
+                <div class="carousel-item">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card">
+                                <img src="images/LakeView Oak Apartments/lakeview-oaks-kitchen.jpg" class="card-img-top" alt="Apartment Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Parkside</h5>
+                                    <p class="card-text">Nearby parks and amenities</p>
+                                    <a href="#" class="btn btn-warning">$200</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="images/Viridian/1b1b_Lily_725Sqft.png" class="card-img-top" alt="Apartment Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Riverside</h5>
+                                    <p class="card-text">Beautiful river views</p>
+                                    <a href="#" class="btn btn-warning">$300</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="images/Viridian/Gym_image.jpg" class="card-img-top" alt="Apartment Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Downtown Heights</h5>
+                                    <p class="card-text">Urban living, close to shopping</p>
+                                    <a href="#" class="btn btn-warning">$250</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Third set of cards -->
+                <div class="carousel-item">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card">
+                                <img src="images/Cambridge Woods/cambridge-woods-room.jpg" class="card-img-top" alt="Apartment Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Suburbian Retreat</h5>
+                                    <p class="card-text">Quiet, family-friendly neighborhood</p>
+                                    <a href="#" class="btn btn-warning">$180</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="images/Cambridge Woods/cambridge-woods-entrance.jpg" class="card-img-top" alt="Apartment Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Modern Condos</h5>
+                                    <p class="card-text">Newly built with modern design</p>
+                                    <a href="#" class="btn btn-warning">$400</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="images/LakeView Oak Apartments/hal.jpg" class="card-img-top" alt="Apartment Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Luxury Loft</h5>
+                                    <p class="card-text">Top floor with panoramic views</p>
+                                    <a href="#" class="btn btn-warning">$500</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="color: #ffffff; opacity: 1;">Prev</span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="color: #ffffff; opacity: 1;">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="my-6">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4" style="color: #2C3E50;">Our Apartment Rental Deals</h2>
+            <p style="font-size: 1.1rem;">Apartment Finder uses real-time rents and availabilities to help you find amazing deals on great apartments. Here's how we identify deals:</p>
+            <div class="row g-4 mt-3">
+                <!-- Price Drop -->
+                <div class="col-md-4">
+                    <div class="icon-feature text-center mx-auto">
+                        <span class="icon-circle bg-light text-warning rounded-circle mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                              <path d="M8 1.5a2.5 2.5 0 0 0-2.5 2.5v1a.5.5 0 0 1-1 0v-1A3.5 3.5 0 0 1 8 0a3.5 3.5 0 0 1 3.5 3.5v1a.5.5 0 0 1 1 0v-1A2.5 2.5 0 0 0 8 1.5z"/>
+                              <path d="M1 8a2.5 2.5 0 0 1 2.5-2.5H4v-1a.5.5 0 0 1 1 0v1h2v-1a.5.5 0 0 1 1 0v1h.5A2.5 2.5 0 0 1 11 8v1a.5.5 0 0 1-1 0V8a1.5 1.5 0 0 0-1.5-1.5H8v3h1.5A1.5 1.5 0 0 0 11 9v1a2.5 2.5 0 0 1-2.5 2.5H8v1a.5.5 0 0 1-1 0v-1H5v1a.5.5 0 0 1-1 0v-1H2.5A2.5 2.5 0 0 1 0 9v-1a1.5 1.5 0 0 1 1.5-1.5H3v-1A1.5 1.5 0 0 1 4.5 5H5v3H3.5A1.5 1.5 0 0 0 2 9v1a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1z"/>
+                            </svg>
+                        </span>
+                        <h3 class="fs-5 fw-bold" style="color: #27AE60;">Price Drop</h3>
+                        <p class="text-muted">Apartment communities change their rental rates often - sometimes multiple times a day. We track the changes and keep you up to date when a rental rate decreases.</p>
+                    </div>
+                </div>
+                <!-- Best Value -->
+                <div class="col-md-4">
+                    <div class="icon-feature text-center mx-auto">
+                        <span class="icon-circle bg-light text-primary rounded-circle mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+                              <path d="M3.1.605a.5.5 0 0 1 .4-.105l4.9 1.686a.5.5 0 0 0 .4 0l4.9-1.686a.5.5 0 0 1 .4.105l2.9 2.9a.5.5 0 0 1 .15.4v5.89a.5.5 0 0 1-.15.4l-2.9 2.9a.5.5 0 0 1-.4.15H3.5a.5.5 0 0 1-.4-.15l-2.9-2.9a.5.5 0 0 1-.15-.4V4.005a.5.5 0 0 1 .15-.4l2.9-2.9z"/>
+                            </svg>
+                        </span>
+                        <h3 class="fs-5 fw-bold" style="color: #2980B9;">Best Value</h3>
+                        <p class="text-muted">"Best value" units are located in buildings rated three stars or higher. We label apartment rentals that are priced significantly less than similar high-quality units nearby.</p>
+                    </div>
+                </div>
+                <!-- Rent Specials -->
+                <div class="col-md-4">
+                    <div class="icon-feature text-center mx-auto">
+                        <span class="icon-circle bg-light text-success rounded-circle mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-tag" viewBox="0 0 16 16">
+                              <path d="M3 2v4.586l4.793 4.793a1 1 0 0 0 1.414 0l4.793-4.793V2H3zm9 1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v3.586l-3.793 3.793a1 1 0 0 1-1.414 0L5 6.586V3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1h4V3z"/>
+                              <path d="M1.5 1a.5.5 0 0 1 .5-.5H5a.5.5 0 0 1 .5.5v4.086a.5.5 0 0 1-.146.354l-4 4A.5.5 0 0 1 1 9.586V1.5a.5.5 0 0 1 .5-.5z"/>
+                            </svg>
+                        </span>
+                        <h3 class="fs-5 fw-bold" style="color: #16A085;">Rent Specials</h3>
+                        <p class="text-muted">Apartment communities regularly advertise deals for new residents. Whether it's a move-in special or a free tv, we locate the rentals that offer a little something extra when you sign your lease.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section class="container my-7">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <!-- FAQ Accordion -->
+        <div id="accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                 Question: Can I bring my pet?
+              </utton>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                Answer: Majority of the apartments listed on our website are pet-friendly. However, it is always recommended to check with the apartment management before bringing your pet.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Question: What is the lease duration?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+              <div class="accordion-body">
+                Answer: The lease duration varies from apartment to apartment. Most apartments offer 12-month leases, but some may offer shorter or longer lease durations. 
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <footer class="bg-light py-3">
+        <div class="container text-center">
+            <p class="mb-0">© 2024 ApartmentFinder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            // Get the username from localStorage
+            var username = localStorage.getItem('username');
+
+            // Get the logout button
+            var logoutButton = document.getElementById('logoutButton');
+
+            // If the user is logged in, show the logout button
+            if (username) {
+                var loginLink = document.getElementById('loginLink');
+                loginLink.textContent = username; // Change link text to username
+                loginLink.href = "#"; // Optionally change the href if you don't want it to link to the login page anymore
+                logoutButton.style.display = 'block'; // Show the logout button
+            } else {
+                logoutButton.style.display = 'none'; // Hide the logout button
+            }
+        };
+        function logout() {
+    localStorage.removeItem('username'); // Clear username from storage
+    window.location.href = 'index.html'; // Redirect to the login page
+}
+    
+
+        </script>
+        
+        
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

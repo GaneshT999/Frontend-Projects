@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #map {
+            width: 100%;
+            height: 480px;
+        }
+
+        .form-field {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: green; font-size: 36px; font-weight: bold; text-decoration: none;">Vethukko</a>
+            <!-- END: ed8c6549bwf9 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Compare.html">Compare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="active nav-link" href="Map.html">Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="map"></div>
+
+    <!-- Leaflet library -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script>
+        var map = L.map('map').setView([28.063640421897833, -82.43445996246433], 14); // setView([latitude, longitude], zoom level)
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers with labels for each apartment location
+        L.marker([28.063640421897833, -82.43445996246433]).addTo(map)
+            .bindPopup("<b>Viridian Apartments</b><br>Tampa, FL").bindTooltip("Viridian Apartments").openTooltip();
+
+        L.marker([28.076485366673204, -82.41615121465829]).addTo(map)
+            .bindPopup("<b>Cambridge Woods</b><br>Tampa, FL").bindTooltip("Cambridge Woods").openTooltip();
+
+        L.marker([28.07667668846083, -82.41863670769118]).addTo(map)
+            .bindPopup("<b>LakeView Oaks</b><br>Tampa, FL").bindTooltip("LakeView Oaks").openTooltip();
+
+        L.marker([28.080358489459048, -82.41236563057218]).addTo(map)
+            .bindPopup("<b>42N Apartments</b><br>Tampa, FL").bindTooltip("42N Apartments").openTooltip();
+
+        L.marker([28.082013198847445, -82.41096712707169]).addTo(map)
+            .bindPopup("<b>Oak Ramble Apt</b><br>Tampa, FL").bindTooltip("Oak Ramble Apt").openTooltip();
+
+        L.marker([28.08149700685247, -82.40855028835803]).addTo(map)
+            .bindPopup("<b>Eagles Point</b><br>Tampa, FL").bindTooltip("Eagles Point").openTooltip();
+
+        L.marker([28.06593793406344, -82.43160814129286]).addTo(map)
+            .bindPopup("<b>College Town @USF</b><br>Tampa, FL").bindTooltip("College Town @USF").openTooltip();
+
+        L.marker([28.090198233111607, -82.42873677167978]).addTo(map)
+            .bindPopup("<b>Forest Lake</b><br>Tampa, FL").bindTooltip("Forest Lake").openTooltip();
+
+        // Custom red marker icon for USF
+        var redIcon = new L.Icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        L.marker([28.05940678121756, -82.4138328750464], { icon: redIcon }).addTo(map)
+            .bindPopup("<b>University of South Florida</b><br>Tampa, FL").bindTooltip("USF").openTooltip();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,371 @@
+[
+  {
+    "Id": 1,
+    "apartmentName": "Viridian Apartments",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 546,
+    "minPrice": 1319,
+    "maxPrice": 1663,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 2,
+    "apartmentName": "Viridian Apartments",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 816,
+    "minPrice": 1366,
+    "maxPrice": 1894,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 3,
+    "apartmentName": "Viridian Apartments",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 725,
+    "minPrice": 1426,
+    "maxPrice": 1807,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 4,
+    "apartmentName": "Viridian Apartments",
+    "bed": 2,
+    "bath": 2,
+    "sqFt": 943,
+    "minPrice": 1505,
+    "maxPrice": 1741,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 5,
+    "apartmentName": "Viridian Apartments",
+    "bed": 2,
+    "bath": 2,
+    "sqFt": 1059,
+    "minPrice": 1555,
+    "maxPrice": 1841,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 6,
+    "apartmentName": "Viridian Apartments",
+    "bed": 3,
+    "bath": 2,
+    "sqFt": 1293,
+    "minPrice": 2297,
+    "maxPrice": 3040,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 7,
+    "apartmentName": "Cambridge Woods",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 580,
+    "minPrice": 1289,
+    "maxPrice": 1450,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 8,
+    "apartmentName": "Cambridge Woods",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 750,
+    "minPrice": 1432,
+    "maxPrice": 1497,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 9,
+    "apartmentName": "Cambridge Woods",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 650,
+    "minPrice": 1880,
+    "maxPrice": 1880,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 10,
+    "apartmentName": "Cambridge Woods",
+    "bed": 2,
+    "bath": 2.5,
+    "sqFt": 1200,
+    "minPrice": 1695,
+    "maxPrice": 2055,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 11,
+    "apartmentName": "Cambridge Woods",
+    "bed": 2,
+    "bath": 2.5,
+    "sqFt": 1163,
+    "minPrice": 2098,
+    "maxPrice": 2098,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 12,
+    "apartmentName": "Cambridge Woods",
+    "bed": 2,
+    "bath": 2.5,
+    "sqFt": 1024,
+    "minPrice": 1640,
+    "maxPrice": 1780,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 13,
+    "apartmentName": "Cambridge Woods",
+    "bed": 2,
+    "bath": 1.5,
+    "sqFt": 1309,
+    "minPrice": 1675,
+    "maxPrice": 1917,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 14,
+    "apartmentName": "Cambridge Woods",
+    "bed": 3,
+    "bath": 2.5,
+    "sqFt": 1454,
+    "minPrice": 2246,
+    "maxPrice": 2655,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 15,
+    "apartmentName": "Cambridge Woods",
+    "bed": 3,
+    "bath": 2,
+    "sqFt": 1525,
+    "minPrice": 2197,
+    "maxPrice": 2741,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 16,
+    "apartmentName": "LakeView Oaks",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 844,
+    "minPrice": 1789,
+    "maxPrice": 2049,
+    "bullRunner": "No"
+  },
+  {
+    "Id": 17,
+    "apartmentName": "LakeView Oaks",
+    "bed": 2,
+    "bath": 2,
+    "sqFt": 1076,
+    "minPrice": 1899,
+    "maxPrice": 2169,
+    "bullRunner": "No"
+  },
+  {
+    "Id": 18,
+    "apartmentName": "LakeView Oaks",
+    "bed": 3,
+    "bath": 3,
+    "sqFt": 1354,
+    "minPrice": 2399,
+    "maxPrice": 2629,
+    "bullRunner": "No"
+  },
+  {
+    "Id": 19,
+    "apartmentName": "Oak Ramble",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 735,
+    "minPrice": 1467,
+    "maxPrice": 1557,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 20,
+    "apartmentName": "Oak Ramble",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 820,
+    "minPrice": 1536,
+    "maxPrice": 1661,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 21,
+    "apartmentName": "Oak Ramble",
+    "bed": 2,
+    "bath": 2,
+    "sqFt": 976,
+    "minPrice": 1611,
+    "maxPrice": 2662,
+    "bullRunner": "Yes"
+  },  {
+    "Id": 22,
+    "apartmentName": "Oak Ramble",
+    "bed": 2,
+    "bath": 2,
+    "sqFt": 1054,
+    "minPrice": 1752,
+    "maxPrice": 2873,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 23,
+    "apartmentName": "Eagles Point",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 650,
+    "minPrice": 1489,
+    "maxPrice": 1671,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 24,
+    "apartmentName": "Eagles Point",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 750,
+    "minPrice": 1386,
+    "maxPrice": 1620,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 25,
+    "apartmentName": "Eagles Point",
+    "bed": 2,
+    "bath": 1,
+    "sqFt": 850,
+    "minPrice": 1900,
+    "maxPrice": 2215,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 26,
+    "apartmentName": "Eagles Point",
+    "bed": 3,
+    "bath": 2,
+    "sqFt": 1150,
+    "minPrice": 2408,
+    "maxPrice": 2867,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 27,
+    "apartmentName": "College Town",
+    "bed": 1,
+    "bath": 1,
+    "sqFt": 838,
+    "minPrice": 1500,
+    "maxPrice": 1775,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 28,
+    "apartmentName": "College Town",
+    "bed": 2,
+    "bath": 2,
+    "sqFt": 838,
+    "minPrice": 950,
+    "maxPrice": 1175,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 29,
+    "apartmentName": "College Town",
+    "bed": 2,
+    "bath": 2.5,
+    "sqFt": 1210,
+    "minPrice": 2100,
+    "maxPrice": 2590,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 30,
+    "apartmentName": "College Town",
+    "bed": 3,
+    "bath": 3,
+    "sqFt": 1244,
+    "minPrice": 2700,
+    "maxPrice": 3345,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 31,
+    "apartmentName": "College Town",
+    "bed": 3,
+    "bath": 3,
+    "sqFt": 1054,
+    "minPrice": 2550,
+    "maxPrice": 3165,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 32,
+    "apartmentName": "42N Street",
+    "bed": 2,
+    "bath": 2,
+    "sqFt": 943,
+    "minPrice": 2341,
+    "maxPrice": 2675,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 33,
+    "apartmentName": "42N Street",
+    "bed": 3,
+    "bath": 3,
+    "sqFt": 1160,
+    "minPrice": 2805,
+    "maxPrice": 2880,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 34,
+    "apartmentName": "42N Street",
+    "bed": 4,
+    "bath": 4,
+    "sqFt": 1440,
+    "minPrice": 3600,
+    "maxPrice": 3840,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 35,
+    "apartmentName": "Forest Lake",
+    "bed": 2,
+    "bath": 2,
+    "sqFt": 1075,
+    "minPrice": 2018,
+    "maxPrice": 2068,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 36,
+    "apartmentName": "Forest Lake",
+    "bed": 3,
+    "bath": 3,
+    "sqFt": 1445,
+    "minPrice": 2562,
+    "maxPrice": 2667,
+    "bullRunner": "Yes"
+  },
+  {
+    "Id": 37,
+    "apartmentName": "Forest Lake",
+    "bed": 4,
+    "bath": 4,
+    "sqFt": 1695,
+    "minPrice": 3116,
+    "maxPrice": 3196,
+    "bullRunner": "Yes"
+  }
+]

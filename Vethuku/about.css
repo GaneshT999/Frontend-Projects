@@ -1,0 +1,153 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+}
+html {
+    overflow-x: hidden;
+}
+section {
+    min-height: 20vh;
+    padding: 10rem 9% 2rem;
+    margin-bottom: 2px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.about {
+    font-size: 62.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2px;
+}
+.about1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 20vw;
+    height: 20vw;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.about-content1 h2 {
+    text-align: right;
+    line-height: 1.2;
+}
+
+.about-content1 p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+=======
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+}
+html {
+    overflow-x: hidden;
+}
+section {
+    min-height: 20vh;
+    padding: 10rem 9% 2rem;
+    margin-bottom: 2px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.about {
+    font-size: 62.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2px;
+}
+.about1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 20vw;
+    height: 20vw;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.about-content1 h2 {
+    text-align: right;
+    line-height: 1.2;
+}
+
+.about-content1 p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+>>>>>>> e1159ed3b20ee059d9e316fd4f2e59e5d13ce7a4
