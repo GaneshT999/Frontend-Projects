@@ -1,0 +1,60 @@
+.mat-card-title{
+    align-items: center !important;
+    margin-left: 27rem;
+}
+.mat-header-cell{
+width: 13rem;
+}
+.mat-card-header{
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+td:first-child, th:first-child {
+    width: 18rem;
+}
+.mat-dialog-actions{
+  position: sticky;
+  bottom: 0;
+}
+.col-3{
+    position: sticky !important;
+    top: 0 !important;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    overflow:scroll;
+  }
+th{
+    background-color: lightblue;
+    top: 0 !important;
+}
+
+.row-header{
+  align-items: center;
+  display: inline-block;
+  }
+  .row-item{
+  flex-grow: 2;
+  flex-wrap: wrap;
+  display: inline-block;
+  }
+  .filter-position{
+  margin-left: auto;
+  width: 1rem;
+  margin-top: 2px;
+  }
+  .filtered-icon{
+  color: green;
+  font-size: 10px;
+  width: 10px;
+  position: absolute;
+  padding-left: 2px;
+  
+  }
+  .filter-icon{
+  width: 11px;
+  position: relative;
+  cursor: pointer;
+  }

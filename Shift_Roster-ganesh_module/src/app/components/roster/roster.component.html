@@ -1,0 +1,97 @@
+<div class="sticky-div">
+  <div class="row sticky text-center">
+    <div class="col-md-4">
+      <div class="btn-group">
+        <div
+          class="btn"
+          mwlCalendarPreviousView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+          (click)="previous()"
+        >
+          <mat-icon><span class="material-symbols-outlined">
+            arrow_back_ios
+            </span></mat-icon>
+        </div>
+        <div
+          class="btn"
+          mwlCalendarToday
+          [(viewDate)]="viewDate"
+          (click)="Today()"
+        >
+          Present
+        </div>
+        <div
+          class="btn"
+          mwlCalendarNextView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+          (click)="NextMonth()"
+        >
+          <mat-icon><span class="material-symbols-outlined">
+            arrow_forward_ios
+            </span></mat-icon>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle') }}</h3>
+    </div>
+    <div class="col-md-4">
+      <div class="btn-group">
+        <div
+          class="btn btn-primary" (click)="requestUpdate()"
+        >
+          Update
+        </div> 
+      </div> &nbsp;&nbsp;
+      <div class="btn-group">
+        <div
+        class="btn btn-primary"
+      >
+      Export to Excel
+      </div> 
+      </div>
+    </div>
+</div>
+</div>
+
+  <br />
+  <div class="wrapper">
+    
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 px-0">
+      <ng-container *ngFor="let col of dates;let i = index">
+        <ng-container matColumnDef="{{ col }}">
+          <th mat-header-cell *matHeaderCellDef>
+            <div class="row-header">
+              <div class="row-item"> {{col | titlePipe}}</div>
+              <div class="row-item filter-position">
+                <mat-icon [matMenuTriggerFor]="appMenu"
+                class="filter-icon"> filter_alt
+                <mat-icon *ngIf=isFiltered(col) class="filtered-icon">circle
+                </mat-icon>
+              </mat-icon>
+              <mat-menu #appMenu>
+                <app-filter [columnName]="col" [columnDataType]="getType(col)"
+                  (emitFilter)="filterData($event)"></app-filter>
+              </mat-menu>
+              </div>
+            </div>
+          </th>
+          <td mat-cell *matCellDef="let element"> {{element[col]}} </td>
+        </ng-container>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="dates"></tr>
+      <tr mat-row *matRowDef="let row; columns: dates"></tr>
+  </table>
+  </div>
+
+  
+ 
+  
+   
+ 
+  

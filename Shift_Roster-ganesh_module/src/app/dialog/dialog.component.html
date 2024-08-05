@@ -1,0 +1,86 @@
+<mat-icon (click)="onClose()" class="closeBtn">close</mat-icon>
+
+<h1 mat-dialog-title>New Request</h1>
+<mat-dialog-content>
+    <mat-tab-group>
+        <mat-tab label="Time Off"> 
+            <div class="time-off">
+                <form>
+                    <mat-form-field>
+                        <mat-label>Start Date</mat-label>
+                        <input matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                      <br>
+                      <mat-form-field>
+                        <mat-label>End Date</mat-label>
+                        <input matInput [matDatepicker]="picker1">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                      </mat-form-field><br>
+                      <mat-form-field>
+                        <mat-label>Reason</mat-label>
+                        <mat-select>
+                            <mat-option placeholder="Reason" *ngFor = "let reason of Reasons" [value]="reason">{{reason}}</mat-option>
+                        </mat-select>
+                      </mat-form-field><br>
+                      <mat-form-field class="textNote">
+                        <mat-label>Note (Optional)</mat-label>
+
+                        <textarea matInput placeholder="Enter Note....."></textarea>
+                  
+                   
+                      </mat-form-field>
+                </form>
+            </div>
+           
+        </mat-tab>
+        <mat-tab label="Swap"> 
+            <div class="time-off">
+                <form [formGroup]="myForm">
+                    <mat-form-field>
+                        <mat-label>I want to swap this shift</mat-label>
+                        <input matInput [matDatepicker]="picker2"  class="form-control" formControlName="pic2">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>&nbsp;&nbsp;
+                      <mat-form-field *ngIf="myForm.get('pic2')?.dirty">
+                            <mat-label>Shift</mat-label>
+                            <mat-select>
+                                <mat-option placeholder="Reason" *ngFor = "let shift1 of Shifts" [value]="shift1">{{shift1}}</mat-option>
+                            </mat-select>
+                      </mat-form-field>
+                      <br>
+                      <br>
+                      <mat-form-field>
+                        <mat-label>For this shift</mat-label>
+                        <input matInput [matDatepicker]="picker3" class="form-control"
+                        formControlName="pic3">
+                        <mat-datepicker-toggle matSuffix [for]="picker3" ></mat-datepicker-toggle>
+                        <mat-datepicker #picker3></mat-datepicker>
+                      </mat-form-field> &nbsp;&nbsp;
+                      <mat-form-field *ngIf="myForm.get('pic3')?.dirty">
+                            <mat-label>Shift</mat-label>
+                            <mat-select>
+                                <mat-option placeholder="Reason" *ngFor = "let shift of Shifts" [value]="shift">{{shift}}</mat-option>
+                            </mat-select>
+                      </mat-form-field>
+                      <br>
+                      <mat-form-field class="textNote">
+                        <mat-label>Note</mat-label>
+
+                        <textarea matInput placeholder="Enter Note....."></textarea>
+                  
+                   
+                      </mat-form-field>
+                </form>
+            </div>   
+        
+        </mat-tab>
+    </mat-tab-group>
+</mat-dialog-content>
+<mat-dialog-actions  class="sendBtn">
+  <button mat-raised-button  mat-dialog-close>Cancel</button>
+  <button mat-raised-button>Send Request</button>
+</mat-dialog-actions>

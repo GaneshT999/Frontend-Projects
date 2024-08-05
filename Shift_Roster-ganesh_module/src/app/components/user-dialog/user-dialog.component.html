@@ -1,0 +1,124 @@
+<mat-icon (click)="onClose()" class="closeBtn">close</mat-icon>
+
+<h1 mat-dialog-title>Edit User</h1>
+<mat-dialog-content>
+  <form [formGroup]="EditUserForm">
+    <div class="form-group">
+      <label for="emailId">Email Id</label>
+      <input
+        type="email"
+        class="form-control"
+        id="emailId"
+        formControlName="emailId"
+        required
+        aria-describedby="emailHelp"
+        placeholder="Enter Email Id"
+        [class.is-invalid]="
+          (EditUserForm.controls['emailId'].touched ||
+            EditUserForm.controls['emailId'].dirty) &&
+          EditUserForm.controls['emailId'].invalid
+        "
+      />
+      <!--<span class="text-danger" *ngIf= "EditUserForm.controls['emailId'].touched && EditUserForm.hasError('required','emailId')">Please enter your TG Email Id</span>-->
+      <span
+        class="invalid-feedback"
+        *ngIf="
+          (EditUserForm.controls['emailId'].touched ||
+            EditUserForm.controls['emailId'].dirty) &&
+          EditUserForm.controls['emailId'].invalid
+        "
+        >Please Enter TG Email</span
+      >
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="userName"
+        required
+        aria-describedby="nameHelp"
+        placeholder="Enter Username"
+        [class.is-invalid]="
+          (EditUserForm.controls['userName'].touched ||
+            EditUserForm.controls['userName'].dirty) &&
+          EditUserForm.controls['userName'].invalid
+        "
+      />
+      <span
+        class="invalid-feedback"
+        *ngIf="
+          (EditUserForm.controls['userName'].touched ||
+            EditUserForm.controls['userName'].dirty) &&
+          EditUserForm.controls['userName'].invalid
+        "
+        >Please enter Name</span
+      >
+    </div>
+    <br />
+
+    <div class="form-group">
+      <label for="project">Project Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="project"
+        formControlName="project"
+        required
+        aria-describedby="nameHelp"
+        placeholder="Enter Project"
+        [matAutocomplete]="auto"
+        [class.is-invalid]="
+          (EditUserForm.controls['project'].touched ||
+            EditUserForm.controls['project'].dirty) &&
+          EditUserForm.controls['project'].invalid
+        "
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+      <span
+        class="invalid-feedback"
+        *ngIf="
+          (EditUserForm.controls['project'].touched ||
+            EditUserForm.controls['project'].dirty) &&
+          EditUserForm.controls['project'].invalid
+        "
+        >Please enter Project Name</span
+      >
+    </div>
+    <br />
+
+    <div class="form-group">
+      <label for="role"><b>Role</b></label
+      ><br />
+      <mat-radio-group formControlName="role" required>
+        <mat-radio-button value="1">User</mat-radio-button><br />
+        <mat-radio-button value="2">Admin</mat-radio-button><br />
+        <mat-radio-button value="3">Super-Admin</mat-radio-button><br />
+      </mat-radio-group>
+    </div>
+
+    <br />
+
+    <div align="center">
+      <button
+        type="button"
+        [disabled]="!EditUserForm.valid"
+        class="btn"
+        mat-raised-button
+      >
+        Save
+      </button>
+      &nbsp;
+      <button type="reset" class="btn" mat-raised-button>Reset</button>
+    </div>
+  </form>
+</mat-dialog-content>

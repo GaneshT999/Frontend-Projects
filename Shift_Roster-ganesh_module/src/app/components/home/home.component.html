@@ -1,0 +1,297 @@
+<div class="Wrapper">
+  <div class="mat-toolbar">
+    <div *ngIf="sidenav.opened && headerview" class="flex-container">
+      <div class="col-5">
+        <button
+          mat-icon-button
+          *ngIf="sidenav.mode === 'over'"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+          <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+        </button>
+        TG<mat-icon class="mat-icon1">circle</mat-icon>
+      </div>
+      <div class="flex-item1">Shift Roster</div>
+      <div class="flex-item">Notifications</div>
+      <div class="flex-item">Hello, User</div>
+      <div class="flex-item" routerLink="/">LogOut</div>
+    </div>
+    <div *ngIf="!sidenav.opened || !headerview" class="flex-container">
+      <div class="col-6">
+        <button
+          mat-icon-button
+          *ngIf="sidenav.mode === 'over'"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+          <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+        </button>
+        TG<mat-icon class="mat-icon1">circle</mat-icon>
+      </div>
+      <div class="flex-item2">Shift Roster</div>
+      <div class="flex-item">Notifications</div>
+      <div class="flex-item">Hello, User</div>
+      <div class="flex-item" routerLink="/">LogOut</div>
+    </div>
+  </div>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+      <!-- <div class=" mat-elevation-z8">
+          <app-calender></app-calender>
+        </div><br> -->
+      <form>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Project Name"
+            [formControl]="myControl"
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option
+              *ngFor="let option of filteredOptions | async"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Team</mat-label>
+          <mat-select>
+            <mat-option
+              placeholder="Location"
+              *ngFor="let team of Teams"
+              [value]="team"
+              >{{ team }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <br />
+        <!-- <mat-checkbox> PTO </mat-checkbox> &nbsp;
+          <mat-checkbox> Holiday </mat-checkbox>   -->
+      </form>
+      <button (click)="searchFn()" mat-raised-button>
+        <mat-icon>search</mat-icon> Search
+      </button>
+      <mat-divider></mat-divider>
+      <div>
+        <button (click)="requestForm()" mat-raised-button>
+          <mat-icon
+            ><span class="material-symbols-outlined"> event </span></mat-icon
+          >Request
+        </button>
+      </div>
+      <mat-divider></mat-divider>
+      <div>
+        <button (click)="requestProject()" mat-raised-button>
+          <mat-icon>add</mat-icon> Add Project
+        </button>
+      </div>
+      <mat-divider></mat-divider>
+      <div>
+        <button (click)="requestUser()" mat-raised-button>
+          <mat-icon
+            ><span class="material-symbols-outlined">
+              person_add
+            </span></mat-icon
+          >
+          Add User
+        </button>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <div *ngIf="contentView" class="emptyContent">
+          <h4>Fill the details and click search to fetch the roster</h4>
+        </div>
+        <div *ngIf="!contentView">
+          <div *ngIf="viewRoster"><app-roster></app-roster></div>
+          <div *ngIf="!viewRoster">
+            <div>
+              <button (click)="request()" mat-raised-button>
+                <mat-icon>add</mat-icon> New Request
+              </button>
+              &nbsp;
+              <button mat-raised-button (click)="swapOnReq()">
+                <mat-icon
+                  ><span class="material-symbols-outlined">
+                    swap_horiz
+                  </span></mat-icon
+                >
+                Swap Requests
+              </button>
+              &nbsp;
+              <button mat-raised-button (click)="TimeOffReq()">
+                <mat-icon
+                  ><span class="material-symbols-outlined">
+                    schedule
+                  </span></mat-icon
+                >
+                TimeOff Requests
+              </button>
+            </div>
+
+            <br />
+            <div *ngIf="timeOffReq">
+              <table
+                mat-table
+                [dataSource]="dataSource"
+                class="mat-elevation-z8"
+              >
+                <form>
+                  <ng-container
+                    *ngFor="let col of displayedColumns; let i = index"
+                  >
+                    <ng-container matColumnDef="{{ col }}">
+                      <th mat-header-cell *matHeaderCellDef>
+                        <div class="row-header">
+                          <div class="row-item" *ngIf="col != 'action'">
+                            {{ col | titlePipe }}
+                          </div>
+                          <div class="row-item" *ngIf="col != 'action'"></div>
+                        </div>
+                      </th>
+                      <div *ngIf="col == 'action'">
+                        <td mat-cell *matCellDef="let element">
+                          <div>
+                            <button mat-stroked-button class="approveBtn">
+                              Approve
+                            </button>
+                            &nbsp;
+                            <button mat-stroked-button class="denyBtn">
+                              Deny
+                            </button>
+                          </div>
+                        </td>
+                      </div>
+                      <div *ngIf="col != 'reason' && col != 'action'">
+                        <td mat-cell *matCellDef="let element">
+                          {{ element[col] }}
+                        </td>
+                      </div>
+                      <div *ngIf="col == 'reason'">
+                        <td mat-cell *matCellDef="let element">
+                          {{ element[col] | slice : 0 : 20 }}
+                          <span class="onHover" matTooltip="{{ element[col] }}"
+                            >{{ element[col].length > 20 ? "..." : "" }}
+                          </span>
+                        </td>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+
+                  <tr
+                    mat-header-row
+                    *matHeaderRowDef="displayedColumns; sticky: true"
+                  ></tr>
+                  <tr
+                    mat-row
+                    *matRowDef="let row; columns: displayedColumns"
+                  ></tr>
+                </form>
+              </table>
+            </div>
+            <div *ngIf="swapReq && !timeOffReq">
+              <table
+                mat-table
+                [dataSource]="swapDataSource"
+                class="mat-elevation-z8"
+              >
+                <form>
+                  <ng-container *ngFor="let col of swapColumns; let i = index">
+                    <ng-container matColumnDef="{{ col }}">
+                      <th mat-header-cell *matHeaderCellDef>
+                        <div class="row-header">
+                          <div class="row-item" *ngIf="col != 'action'">
+                            {{ col | titlePipe }}
+                          </div>
+                          <div class="row-item" *ngIf="col != 'action'"></div>
+                        </div>
+                      </th>
+                      <div *ngIf="col == 'action'">
+                        <td mat-cell *matCellDef="let element">
+                          <div>
+                            <button mat-stroked-button class="approveBtn">
+                              Approve
+                            </button>
+                            &nbsp;
+                            <button mat-stroked-button class="denyBtn">
+                              Deny
+                            </button>
+                          </div>
+                        </td>
+                      </div>
+                      <div *ngIf="col != 'reason' && col != 'action'">
+                        <td mat-cell *matCellDef="let element">
+                          {{ element[col] }}
+                        </td>
+                      </div>
+                      <div *ngIf="col == 'reason'">
+                        <td mat-cell *matCellDef="let element">
+                          {{ element[col] | slice : 0 : 20 }}
+                          <span class="onHover" matTooltip="{{ element[col] }}"
+                            >{{ element[col].length > 20 ? "..." : "" }}
+                          </span>
+                        </td>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+
+                  <tr
+                    mat-header-row
+                    *matHeaderRowDef="swapColumns; sticky: true"
+                  ></tr>
+                  <tr mat-row *matRowDef="let row; columns: swapColumns"></tr>
+                </form>
+              </table>
+            </div>
+            <div *ngIf="!timeOffReq && !swapReq">
+              <table
+                mat-table
+                [dataSource]="dataSource"
+                class="mat-elevation-z8"
+              >
+                <form>
+                  <ng-container *ngFor="let col of reqColumns; let i = index">
+                    <ng-container matColumnDef="{{ col }}">
+                      <th mat-header-cell *matHeaderCellDef>
+                        <div class="row-header">
+                          <div class="row-item">
+                            {{ col | titlePipe }}
+                          </div>
+                        </div>
+                      </th>
+                      <div *ngIf="col != 'reason'">
+                        <td mat-cell *matCellDef="let element">
+                          {{ element[col] }}
+                        </td>
+                      </div>
+                      <div *ngIf="col == 'reason'">
+                        <td mat-cell *matCellDef="let element">
+                          {{ element[col] | slice : 0 : 20 }}
+                          <span class="onHover" matTooltip="{{ element[col] }}"
+                            >{{ element[col].length > 20 ? "..." : "" }}
+                          </span>
+                        </td>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+
+                  <tr
+                    mat-header-row
+                    *matHeaderRowDef="reqColumns; sticky: true"
+                  ></tr>
+                  <tr mat-row *matRowDef="let row; columns: reqColumns"></tr>
+                </form>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

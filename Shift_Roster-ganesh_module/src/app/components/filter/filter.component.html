@@ -1,0 +1,18 @@
+<div class="container">
+    <form [formGroup]="filterForm">
+        <div class="row" (click)="$event.stopPropagation();">
+            <div class="col-12">
+                <select class="col-12" (click)="$event.stopPropagation();" (change)="sendFilterData()"
+                    formControlName="filterOpt">
+                    <option *ngFor="let opt of filterOptions" value={{opt}}>{{opt}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <input type="text" class="col-12" (click)="$event.stopPropagation();" (keyup)="sendFilterData()"
+                    formControlName="filterValue" [placeholder]="getPlaceholder()">
+            </div>
+        </div>
+    </form>
+</div>

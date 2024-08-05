@@ -1,0 +1,104 @@
+<div class="mat-toolbar">
+  <div class="flex-container">
+    <div class="col-5">TG<mat-icon class="mat-icon1">circle</mat-icon></div>
+    <div class="flex-item1">Shift Roster</div>
+    <div class="flex-item" routerLink="/register">Register</div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card mt-3">
+        <div class="card-header" align="center">
+          <h3>Login here</h3>
+        </div>
+
+        <div class="card-body">
+          <p *ngIf="loginError">{{ loginError }}</p>
+
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                formControlName="email"
+                required
+                aria-describedby="nameHelp"
+                placeholder="Enter Email"
+                [class.is-invalid]="
+                  (loginForm.controls['email'].touched ||
+                    loginForm.controls['email'].dirty) &&
+                  loginForm.controls['email'].invalid
+                "
+              />
+              <span
+                class="invalid-feedback"
+                *ngIf="
+                  (loginForm.controls['email'].touched ||
+                    loginForm.controls['email'].dirty) &&
+                  loginForm.controls['email'].invalid
+                "
+                >Please enter your Email</span
+              >
+            </div>
+            <br />
+            <div class="form-group">
+              <label for="password">User Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                formControlName="password"
+                required
+                aria-describedby="passwordHelp"
+                placeholder="Enter Password"
+                [class.is-invalid]="
+                  (loginForm.controls['password'].touched ||
+                    loginForm.controls['password'].dirty) &&
+                  loginForm.controls['password'].invalid
+                "
+              />
+              <span
+                class="invalid-feedback"
+                *ngIf="
+                  (loginForm.controls['password'].touched ||
+                    loginForm.controls['password'].dirty) &&
+                  loginForm.controls['password'].invalid
+                "
+                >Enter your password</span
+              >
+            </div>
+            <br />
+
+            <div class="row">
+              <div class="col-md-5 forgotPassword">
+                <a routerLink="forgot"><small>Forgot Password</small></a>
+              </div>
+
+              <div class="col-md-7 registerClick">
+                <a routerLink="register"
+                  ><small>Not registerd? Click here</small>
+                </a>
+              </div>
+            </div>
+            <br />
+            <div align="center">
+              <button
+                button
+                type="submit"
+                [disabled]="!loginForm.valid"
+                mat-raised-button
+              >
+                Login
+              </button>
+              &nbsp;
+              <button class="btn" type="reset" mat-raised-button>Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

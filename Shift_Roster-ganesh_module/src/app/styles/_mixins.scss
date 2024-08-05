@@ -1,0 +1,15 @@
+@mixin mat-table-columns($columns) 
+{
+    .col-width-{
+        @each $colName,$props in $columns {
+            $flex: map-get($props,'min-width');
+            &#{$colName}{
+                width: $flex;
+
+                @if map-has-key($props,'color'){
+                    color: map-get($props, 'color' );
+                }
+            }
+        }
+    }
+}

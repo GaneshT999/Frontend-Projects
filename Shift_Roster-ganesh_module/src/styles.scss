@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+    border-radius: 5px;
+  }
+ ::-webkit-scrollbar-thumb {
+    background: #000;
+    height: 1em;
+    border-radius: 5px;
+  }
+
+  
+  
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

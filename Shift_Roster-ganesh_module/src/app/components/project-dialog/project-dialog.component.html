@@ -1,0 +1,101 @@
+<mat-icon (click)="onClose()" class="closeBtn">close</mat-icon>
+
+<h1 mat-dialog-title>Create Project</h1>
+<mat-dialog-content>
+  <form [formGroup]="EditProjectForm">
+    <div class="form-group">
+      <label for="project">Enter Project Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="project"
+        formControlName="project"
+        required
+        aria-describedby="nameHelp"
+        placeholder="Enter Project"
+        [class.is-invalid]="
+          (EditProjectForm.controls['project'].touched ||
+            EditProjectForm.controls['project'].dirty) &&
+          EditProjectForm.controls['project'].invalid
+        "
+      />
+      <span
+        class="invalid-feedback"
+        *ngIf="
+          (EditProjectForm.controls['project'].touched ||
+            EditProjectForm.controls['project'].dirty) &&
+          EditProjectForm.controls['project'].invalid
+        "
+        >Please enter Project Name</span
+      >
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="emailId">Admin Email Id</label>
+      <input
+        type="email"
+        class="form-control"
+        id="emailId"
+        formControlName="emailId"
+        required
+        aria-describedby="emailHelp"
+        placeholder="Enter Admin Email Id"
+        [class.is-invalid]="
+          (EditProjectForm.controls['emailId'].touched ||
+            EditProjectForm.controls['emailId'].dirty) &&
+          EditProjectForm.controls['emailId'].invalid
+        "
+      />
+      <span
+        class="invalid-feedback"
+        *ngIf="
+          (EditProjectForm.controls['emailId'].touched ||
+            EditProjectForm.controls['emailId'].dirty) &&
+          EditProjectForm.controls['emailId'].invalid
+        "
+        >Please Enter TG Email</span
+      >
+    </div>
+    <br />
+    <div class="form-group">
+      <label for="userName">Admin Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="userName"
+        required
+        aria-describedby="nameHelp"
+        placeholder="Enter Admin name"
+        [class.is-invalid]="
+          (EditProjectForm.controls['userName'].touched ||
+            EditProjectForm.controls['userName'].dirty) &&
+          EditProjectForm.controls['userName'].invalid
+        "
+      />
+      <span
+        class="invalid-feedback"
+        *ngIf="
+          (EditProjectForm.controls['userName'].touched ||
+            EditProjectForm.controls['userName'].dirty) &&
+          EditProjectForm.controls['userName'].invalid
+        "
+        >Please enter Name</span
+      >
+    </div>
+    <br />
+
+    <div align="center">
+      <button
+        type="button"
+        [disabled]="!EditProjectForm.valid"
+        class="btn"
+        mat-raised-button
+      >
+        Save
+      </button>
+      &nbsp;
+      <button type="reset" class="btn" mat-raised-button>Reset</button>
+    </div>
+  </form>
+</mat-dialog-content>
